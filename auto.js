@@ -1,4 +1,4 @@
-function ajax({url,method="GET",params={},data={}}){
+function axios({url,method="GET",params={},data={}}){
     return new Promise((resolve,reject)=>{
         //处理params参数,例如{id:1,xxx:'abc'}
         let str=""
