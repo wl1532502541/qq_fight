@@ -89,6 +89,7 @@ addTask(arena_reward)
 let taskTimer = setInterval(()=>{
     if(taskIndex == taskList.length){
         clearInterval(taskTimer)
+        return 
     }
     taskList[taskIndex]()
     taskIndex++
