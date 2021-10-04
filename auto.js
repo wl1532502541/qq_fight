@@ -1,75 +1,81 @@
-// function axios({url,method="GET",params={},data={}}){
-//     return new Promise((resolve,reject)=>{
-//         //处理params参数,例如{id:1,xxx:'abc'}
-//         let str=""
-//         Object.keys(params).forEach(key=>{
-//             str+=`${key}=${params[key]}&`
-//         })
-//         if(str)str.slice(0,-1)
-//         url=url+str
+function axios({url,method="GET",params={},data={}}){
+    return new Promise((resolve,reject)=>{
+        //处理params参数,例如{id:1,xxx:'abc'}
+        let str=""
+        Object.keys(params).forEach(key=>{
+            str+=`${key}=${params[key]}&`
+        })
+        if(str)str.slice(0,-1)
+        url=url+str
 
-//         const xhr=new XMLHttpRequest();
-//         xhr.open(method,url)
-//         xhr.onreadystatechange=function(){
-//             if(xhr.readyState===4){
-//                 if(xhr.status>=200&&xhr.status<300){
-//                     resolve({
-//                         status:xhr.status,
-//                         statusText:xhr.statusText,
-//                         data:xhr.response
-//                     })
-//                 }else{
-//                     reject(new Error("请求失败，状态码："+xhr.status))
-//                 }
-//             }
-//         }
+        const xhr=new XMLHttpRequest();
+        xhr.open(method,url)
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState===4){
+                if(xhr.status>=200&&xhr.status<300){
+                    resolve({
+                        status:xhr.status,
+                        statusText:xhr.statusText,
+                        data:xhr.response
+                    })
+                }else{
+                    reject(new Error("请求失败，状态码："+xhr.status))
+                }
+            }
+        }
 
-//         //处理method方法
-//         method=method.toUpperCase() //method转大写
-//         if(method=="GET"){
-//             xhr.send()
-//         }else if(method=="POST"||method=="PUT"||method=="DELETE"){
-//             //设置文件类型
-//             xhr.setRequestHeader("Content-Type","application/json")
-//             xhr.send(JSON.stringify(data))
-//         }
-//     })
-// }
-// /* 发送特定请求的静态方法 */
-// axios.get = function (url, options={}) {
-//     return axios(Object.assign(options, {url, method: 'GET'}))
-// }
-// axios.delete = function (url, options) {
-//     return axios(Object.assign(options, {url, method: 'DELETE'}))
-// }
-// axios.post = function (url, data, options) {
-//     return axios(Object.assign(options, {url, data, method: 'POST'}))
-// }
-// axios.put = function (url, data, options) {
-//     return axios(Object.assign(options, {url, data, method: 'PUT'}))
-// }
+        //处理method方法
+        method=method.toUpperCase() //method转大写
+        if(method=="GET"){
+            xhr.send()
+        }else if(method=="POST"||method=="PUT"||method=="DELETE"){
+            //设置文件类型
+            xhr.setRequestHeader("Content-Type","application/json")
+            xhr.send(JSON.stringify(data))
+        }
+    })
+}
+/* 发送特定请求的静态方法 */
+axios.get = function (url, options={}) {
+    return axios(Object.assign(options, {url, method: 'GET'}))
+}
+axios.delete = function (url, options) {
+    return axios(Object.assign(options, {url, method: 'DELETE'}))
+}
+axios.post = function (url, data, options) {
+    return axios(Object.assign(options, {url, data, method: 'POST'}))
+}
+axios.put = function (url, data, options) {
+    return axios(Object.assign(options, {url, data, method: 'PUT'}))
+}
+function general(url, message = "", times = 1){
+    function inner(){
+        axios.get(url).then(() =>{
+            console.log(message)
+        })
+    }
+    for(let i = 0; i < times; i++){
+        taskList.push(inner)
+    }
+}
 // 全局任务
 const taskList=[]
 let taskIndex = 0
 
-// function general(url, message = "", times = 1){
+// function general(url,message = "", times = 1){
 //     function inner(){
-//         axios.get(url).then(() =>{
-//             console.log(message)
-//         })
+//         let newWindow = window.open(url,url)
+//         console.log('newWindow',newWindow)
+//         console.log(message)
+//         setTimeout(()=>{
+//             newWindow.close()
+//             newWindow = null
+//         },3000)
 //     }
-//     for(let i = 0; i < times; i++){
+//     for(let i=0;i<times;i++){
 //         taskList.push(inner)
 //     }
 // }
-function general(url,message = "", times = 1){
-    let newWindow = window.open(url)
-    console.log(message)
-    let timer = setTimeout(()=>{
-        newWindow.close()
-        clearTimeout(timer)
-    },3000)
-}
 
 // 每日奖励
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=dailygift&op=draw&key=login','每日礼包')
@@ -167,7 +173,11 @@ general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=task&sub=7','一键完成任务')
 
 // 活跃度礼包
-general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=liveness_getgiftbag&giftbagid=3&action=1')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=liveness_getgiftbag&giftbagid=1&action=1','活跃小礼包')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=liveness_getgiftbag&giftbagid=2&action=1','活跃中礼包')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=liveness_getgiftbag&giftbagid=3&action=1','活跃大礼包')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=liveness_getgiftbag&giftbagid=4&action=1','活跃终极礼包')
+
 
 // 最终执行
 let taskTimer = setInterval(()=>{
