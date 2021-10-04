@@ -63,7 +63,7 @@ let taskIndex = 0
 //     }
 // }
 function general(url,message = "", times = 1){
-    let newWindow = window.open('url')
+    let newWindow = window.open(url)
     console.log(message)
     let timer = setTimeout(()=>{
         newWindow.close()
