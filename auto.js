@@ -77,6 +77,13 @@ let taskIndex = 0
 //     }
 // }
 
+// 配置
+const config={
+    // 徒弟
+    apprentice:[1738978524, 1545682873, 1070639853],
+    // 师傅
+    master:1273036794
+}
 // 每日奖励
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=dailygift&op=draw&key=login','每日礼包')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=dailygift&op=draw&key=meridian','传功符礼包')
@@ -112,16 +119,16 @@ general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=immortals&op=fightimmortals','挑战')
 
 // 师徒妻拜
+// 徒弟
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=exp','领取徒弟经验')
+for(let i =0,n=config.apprentice.lengh;i<n;i++){
+    general(`https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=${config.apprentice[i]}`)
+}
+// 师傅
+general(`https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=${config.master}`)
 
 // 武林大会
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=fastSignWulin&ifFirstSign=1','报名武林大会')
-
-// 矿洞
-general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factionmine&op=reward','领取矿洞奖励')
-general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factionmine&op=fight','挑战矿洞',3)
-
-
 
 // 旅行
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=dreamtrip&sub=2','普通旅行一次',1)
@@ -157,6 +164,12 @@ general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=151&page=1&type=1','乐斗小王子')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=1532502541','乐斗心魔')
 
+/**
+ * 帮派
+ */
+// 矿洞
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factionmine&op=reward','领取矿洞奖励')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factionmine&op=fight','挑战矿洞',3)
 // 乐斗帮友
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=10&page=1&type=2','乐斗羊魔王')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=2&page=1&type=2','乐斗教主')
@@ -167,17 +180,32 @@ general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=14&page=1&type=2','乐斗马大师')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=19&page=1&type=2','乐斗邪神畅')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=155&page=1&type=2','乐斗一灯大师')
+// 帮派任务
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factionop&subtype=8&pageno=1&type=2','查看帮派要闻')
+genral('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factiontask&sub=3&id=16','领取查看帮派要闻奖励')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_sid=&cmd=factiontrain&type=2&id=2518&num=1&i_p_w=num%7C','帮派修炼真元护体一次')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factiontask&sub=3&id=8','领取帮修奖励')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=oblation&id=3001&page=1','供奉一个小体力')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factiontask&sub=3&id=1','领取帮派供奉奖励')
+
 // 许愿
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=wish&sub=6','领取奖励')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=wish&sub=4','许愿')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=wish&sub=1','向月敏上香许愿')
+
+// 历程分享
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=sharegame&subtype=6','一键分享')
 
 // 任务
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=task&sub=7','一键完成任务')
+
 
 // 活跃度礼包
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=liveness_getgiftbag&giftbagid=1&action=1','活跃小礼包')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=liveness_getgiftbag&giftbagid=2&action=1','活跃中礼包')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=liveness_getgiftbag&giftbagid=3&action=1','活跃大礼包')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=liveness_getgiftbag&giftbagid=4&action=1','活跃终极礼包')
-
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=factionop&subtype=18','帮派总活跃礼包')
 
 // 最终执行
 let taskTimer = setInterval(()=>{
