@@ -182,7 +182,7 @@ general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=155&page=1&type=2','乐斗一灯大师')
 // 帮派任务
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factionop&subtype=8&pageno=1&type=2','查看帮派要闻')
-genral('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factiontask&sub=3&id=16','领取查看帮派要闻奖励')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factiontask&sub=3&id=16','领取查看帮派要闻奖励')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_sid=&cmd=factiontrain&type=2&id=2518&num=1&i_p_w=num%7C','帮派修炼真元护体一次')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=factiontask&sub=3&id=8','领取帮修奖励')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=oblation&id=3001&page=1','供奉一个小体力')
