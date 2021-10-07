@@ -82,7 +82,9 @@ const config={
     // 徒弟
     apprentice:[1738978524, 1545682873, 1070639853],
     // 师傅
-    master:1273036794
+    master:1273036794,
+    // 陌生人
+    stranger:[188584100,1421801427,425766112]
 }
 // 每日奖励
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=dailygift&op=draw&key=login','每日礼包')
@@ -121,11 +123,16 @@ general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=
 // 师徒妻拜
 // 徒弟
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=exp','领取徒弟经验')
-for(let i =0,n=config.apprentice.lengh;i<n;i++){
-    general(`https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=${config.apprentice[i]}`)
+for(let i =0,n=config.apprentice.length;i<n;i++){
+    general(`https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=${config.apprentice[i]}`,'挑战徒弟')
 }
 // 师傅
-general(`https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=${config.master}`)
+general(`https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=${config.master}`,'挑战师傅')
+
+// 挑战3次陌生人
+for(let i=0,n=config.stranger.length;i<n;i++){
+    general(`https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=${config.stranger[i]}&page=1&type=9`,'挑战陌生人')
+}
 
 // 武林大会
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=fastSignWulin&ifFirstSign=1','报名武林大会')
