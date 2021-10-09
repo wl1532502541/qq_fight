@@ -84,8 +84,12 @@ const config={
     // 师傅
     master:1273036794,
     // 陌生人
-    stranger:[188584100,1421801427,425766112]
+    stranger:[188584100, 1421801427, 425766112]
 }
+const now = new Date()
+// yyyy-MM-dd HH:mm:ss
+const dd = now.getDay()
+const HH = now.getHours() 
 // 每日奖励
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=dailygift&op=draw&key=login','每日礼包')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=dailygift&op=draw&key=meridian','传功符礼包')
@@ -120,6 +124,13 @@ general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=immortals&op=visitimmortals&mountainId=2','寻访+敏捷')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=immortals&op=fightimmortals','挑战')
 
+// 天界十二宫
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=zodiacdungeon&op=showautofightpage&scene_id=1011','天界12宫-双鱼（111-120)')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=zodiacdungeon&op=autofight&scene_id=1011&pay_recover_times=0','请猴王扫荡')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=zodiacdungeon&op=showresurrection&from=autofight','复活')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=zodiacdungeon&op=choosebuff&pay_index=0&free_index=1&from=autofight','选择菜菜的祝福')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=zodiacdungeon&op=backtolife&pay_index=0&free_index=1&from=autofight','确认复活')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=zodiacdungeon&op=autofight&scene_id=1011&pay_recover_times=0','请猴王扫荡')
 // 师徒妻拜
 // 徒弟
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&B_UID=0&sid=&channel=0&g_ut=1&cmd=exp','领取徒弟经验')
@@ -170,6 +181,7 @@ general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=7&page=1&type=1','乐斗菜菜')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=151&page=1&type=1','乐斗小王子')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=fight&B_UID=1532502541','乐斗心魔')
+
 
 /**
  * 帮派
