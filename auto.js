@@ -159,6 +159,7 @@ general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=
 
 // 斗神塔
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=towerfight&type=7&confirm=1','斗神塔结束挑战')
+general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=towerfight&type=7','取消复活')
 general('https://dld.qzapp.z.qq.com/qpet/cgi-bin/phonepk?zapp_uin=&sid=&channel=0&g_ut=1&cmd=towerfight&type=1','自动挑战')
 
 // 画卷迷踪
